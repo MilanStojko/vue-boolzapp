@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row>*{
+    padding: 0;
+}
+.row{
+    background-color: #0f161a !important;
+}
+input{
+    outline: none;
+}
+body{
+    font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
+main{
+    background-color: #070b0e;
+    width: 100vw;
+    height: 960px;
+}
+#main-content{
+    background-color: #070b0e;
+    width: 100%;
+    height: 97%;
+}
+.user,
+.nav-info{
+    background-color: #232627;
+    height: 70px;
+    padding: 13px;
+}
+.userpfp,
+.userpfp img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0;
+    vertical-align: 0;
+    gap: 1rem;
+}
+.menu-icons{
+    color: #b8b2a9;
+}
+.menu-icons i{
+    font-size: 1.5rem;
+    padding: 15px;
+}
+.a-user-desc{
+    width: 100%;
+    font-size: 1rem;
+    align-self: center;
+    color: #b8b2a9;
+    line-height: 1rem;
+}
+.a-user-desc h5{
+    font-size: 1.5rem;
+    margin: 0 !important;
+}
+.a-user-desc span{
+    font-size: 0.7rem;
+}
+.notification{
+    background-color: #06425c;
+    padding: 10px !important;
+    height: 90px;
+}
+.bell{
+    height: 65%;
+    width: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bell i{
+    font-size: 1.5rem;
+    color: #06425c;
+    padding: 5px;
+}
+.outline-bell{
+    background-color: #90b3bf;
+    border-radius: 50%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.notification-text{
+    height: 50%;
+    padding: 15px;
+}
+.notification-text span{
+    color: #d1d3c9;
+}
+.not-desc{
+    opacity: 0.8;
+    text-decoration: none;
+}
+.not-desc:hover{
+    opacity: 1;
+    text-decoration: underline;
+}
+.search-container{
+    height: 50px;
+    background-color: #0f161a;
+    border-bottom: 1px solid #7e7567;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar{
+    border-style: hidden;
+    background-color: #323739;
+    background-image: url(../img/svg/search-solid.svg);
+    background-size: 15px 15px;
+    background-position: 15px 12px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border-radius: 20px 20px;
+    width: 90%;
+    height: 36px;
+    color: #b8b2a9;
+    font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
+.chat-nav{
+    height: calc(940px - 70px);
+    background-color: #0f161a;
+}
+.chat-users{
+    background-color: #0f161a;
+    /* height: 712px; */
+}
+.single-chat{
+    height: 90px;
+    background-color: #0f161a;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    padding: 6px;
+    cursor: pointer;
+    border-bottom: 1px solid #7e7567;
+}
+.userpfp-2,
+.userpfp-2 img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    vertical-align: 0;
+}
+.userpfp-2{
+    margin-left: 10px;
+}
+.single-chat:hover,
+.single-chat:focus{
+    background-color: #282c2d;
+}
+.chat-display{
+    height: calc(940px - 70px);
+    background-image: url(../img/bkstyle1.jpg);
+}
+.chat{
+    height: 100%;
+}
+.message{
+    min-width: 100%;
+    color: #d2d1cd;
+    margin-bottom: 10px;
+}
+.sent{
+    align-self: start;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    min-height: 50px;
+    min-width: 200px;
+    background-color: #1e2427;
+    border-radius: 15px;
+}
+.received{
+    align-self: end;
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 40px;
+    min-height: 50px;
+    min-width: 200px;
+    background-color: #044e4e;
+    border-radius: 15px;
+}
+.message-container{
+    height: 70px;
+    background-color: #181d20;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.message-container i{
+    font-size: 1.5rem;
+    color: #b8b2a9;
+    padding: 10px;
+    cursor: pointer;
+}
+.messagebar{
+    border-style: hidden;
+    outline: 1px solid #7e7567;
+    background-color: #323739;
+    padding-left: 40px;
+    border-radius: 30px;
+    width: 85%;
+    height: 45px;
+    color: #b8b2a9;
+    font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
