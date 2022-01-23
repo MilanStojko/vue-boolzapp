@@ -31,6 +31,7 @@
                 <img src="assets/img/eziogreggiomangia.jpg" alt="" />
               </div>
               <div class="menu-icons justify-self-end">
+                <!--al click cambia lo stile da chiaro a scuro-->
                 <i class="fab fa-whatsapp" @click="mode = !mode"></i>
                 <i class="far fa-comment-alt"></i>
                 <i class="fas fa-ellipsis-v"></i>
@@ -38,7 +39,7 @@
             </div>
             <!--immagine profilo della chat più infrmazioni-->
             <div class="col-8 blue nav-info d-flex">
-              <div class="userpfp flex-grow-1 d-flex">
+              <div class="userpfp flex-grow-1 d-flex" v-if="focused > -1">
                 <img :src="contacts[focused].avatar" alt="" />
                 <div class="a-user-desc">
                   <h5>{{contacts[focused].name}}</h5>
@@ -108,14 +109,17 @@
                 </div>
               </div>
             </div>
+            <!--stampa chat dei messaggi con i contatti-->
             <div class="col-8 chat-display">
               <div class="chat">
                 <div
+                  v-if="focused > -1"
                   class="message"
                   :class="`${messaggio.status}`"
                   v-for="(messaggio, index) in contacts[focused].messages"
                 >
                   <span class="efmessage">{{messaggio.text}}</span>
+                  <img :src="messaggio.img" class="imgrisposta">
                   <span class="date">{{messaggio.date}}</span>
                   <div class="arrowgiu">
                     <i class="fas fa-chevron-down" @click="messaggio.arrowdown = !messaggio.arrowdown"></i>
@@ -126,19 +130,22 @@
                   </div>
                 </div>
               </div>
+              <!--barra per invio del messaggio-->
               <div class="inviocontainer">
                 <i class="fas fa-grin-beam"></i>
                 <i class="fas fa-paperclip"></i>
                 <input
                   type="text"
                   name=""
+                  @keyup="checkInput()"
                   @keyup.enter="sendMessage(focused)"
                   v-model="inputMsg"
                   id=""
                   class="messagebar"
                   placeholder="Scrivi un messaggio"
                 />
-                <i class="fas fa-microphone-alt"></i>
+                <i class="fas fa-paper-plane" :class="{invisible :inputStatus}"></i>
+                <i class="fas fa-microphone-alt" :class="{invisible :!inputStatus}"></i>
               </div>
             </div>
           </div>

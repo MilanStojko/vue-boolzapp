@@ -48,6 +48,9 @@ main.dark {
 .menu-icons {
   color: #b8b2a9;
 }
+.fa-whatsapp{
+  cursor: pointer;
+}
 .menu-icons i {
   font-size: 1.5rem;
   padding: 15px;
@@ -249,6 +252,10 @@ main.dark {
 .efmessage {
   width: 100%;
   padding: 10px 20px 15px 20px;
+}
+.imgrisposta{
+  max-width: 400px;
+  max-height: 500px;
 }
 .date {
   font-size: 0.5rem;
