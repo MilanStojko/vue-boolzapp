@@ -124,7 +124,7 @@
                   <div class="arrowgiu">
                     <i class="fas fa-chevron-down" @click="messaggio.arrowdown = !messaggio.arrowdown"></i>
                   </div>
-                  <div class="dropdown" :class="{visible : messaggio.arrowdown}">
+                  <div class="dropdown" :class="{visible : messaggio.arrowdown}" @mouseleave="messaggio.arrowdown = !messaggio.arrowdown">
                     <a href="#">Info messaggio</a>
                     <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
                   </div>
