@@ -18,6 +18,13 @@ let app = new Vue({
       "assets/img/tenor.gif",
       "assets/img/pog.jpg",
       "assets/img/_5.jpg",
+      "assets/img/_6.png",
+      "assets/img/_7.png",
+      "assets/img/_8.png",
+      "assets/img/_9.png",
+      "assets/img/_10.png",
+      "assets/img/_11.png",
+      "assets/img/_12.png"
     ],
     randomAnsw: [
       "we wagliù",
