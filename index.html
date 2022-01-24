@@ -43,7 +43,7 @@
                 <img :src="contacts[focused].avatar" alt="" />
                 <div class="a-user-desc">
                   <h5>{{contacts[focused].name}}</h5>
-                  <span>Ultimo accesso alle {{contacts[focused].messages.at(-1).date}}</span>
+                  <span v-if="contacts[focused].messages.length > 0">Ultimo accesso alle {{contacts[focused].messages.at(-1).date}}</span>
                 </div>
               </div>
               <div class="menu-icons justify-self-end">
@@ -102,9 +102,9 @@
                   <div class="a-user-desc">
                     <div>
                       <h5>{{contact.name}}</h5>
-                      <span class="dateuser">{{contact.messages.at(-1).date}}</span>
+                      <span class="dateuser" v-if="contact.messages.length > 0">{{contact.messages.at(-1).date}}</span>
                     </div>
-                    <span class="lastmsg">{{contact.messages.at(-1).text}}</span>
+                    <span class="lastmsg" v-if="contact.messages.length > 0">{{contact.messages.at(-1).text}}</span>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                   :class="`${messaggio.status}`"
                   v-for="(messaggio, index) in contacts[focused].messages"
                 >
-                  <span class="efmessage">{{messaggio.text}}</span>
+                  <span class="efmessage" >{{messaggio.text}}</span>
                   <img :src="messaggio.img" class="imgrisposta">
                   <span class="date">{{messaggio.date}}</span>
                   <div class="arrowgiu">
@@ -144,7 +144,7 @@
                   class="messagebar"
                   placeholder="Scrivi un messaggio"
                 />
-                <i class="fas fa-paper-plane" :class="{invisible :inputStatus}"></i>
+                <i class="fas fa-paper-plane" :class="{invisible :inputStatus}" @click="sendMessage(focused)"></i>
                 <i class="fas fa-microphone-alt" :class="{invisible :!inputStatus}"></i>
               </div>
             </div>

@@ -8,6 +8,7 @@ let app = new Vue({
     activateArrow: "",
     inputStatus : true,
     mode: false,
+    num: 1,
     randomImg: [
       "assets/img/amogus.jpg",
       "assets/img/Salvini.jpg",
@@ -190,20 +191,23 @@ let app = new Vue({
           arrowdown: false,
           date: dayjs().format("DD/MM/YYYY HH:mm"),
         });
+        this.inputMsg = "";
+        setTimeout(() => {  
+          this.num = Math.floor(Math.random()*2 + 1)
+          if(this.num == 1){
+            this.textAnsw(focused)
+          }else{
+            this.imgAnsw(focused)
+          }
+          return this.num;
+        }, 1000);
+        console.log(this.num)
+        setTimeout(()=>{
+          this.scrollautomatico()
+        }, 0)
+      }else{
+        return
       }
-      this.inputMsg = "";
-      setTimeout(() => {  
-        let num = Math.floor(Math.random()*2 + 1)
-        if(num == 1){
-          this.textAnsw(focused)
-        }else{
-          this.imgAnsw(focused)
-        }
-        console.log(num)
-      }, 1000);
-      setTimeout(()=>{
-        this.scrollautomatico()
-      }, 0)
     },
     textAnsw(focused){
       this.contacts[focused].messages.push({
@@ -227,14 +231,14 @@ let app = new Vue({
         this.scrollautomatico()
       }, 0)
     },
-      checkInput(){
-        if(this.inputMsg.trim() == ''){
-          this.inputMsg = '';
-          this.inputStatus = true;
-        } else{
-          this.inputStatus = false;
-        }
-      },
+    checkInput(){
+      if(this.inputMsg.trim() == ''){
+        this.inputMsg = '';
+        this.inputStatus = true;
+      } else{
+        this.inputStatus = false;
+      }
+    },
     searchUser() {
       this.contacts.forEach((element) => {
         element.name.toLowerCase().includes(this.forceLower())
